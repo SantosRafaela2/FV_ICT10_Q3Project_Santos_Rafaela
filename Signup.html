@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Intramurals Sign Up</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #edf5ff, #e6f0ff);
+    text-align: center;
+    color: #3a4a63;
+    margin: 0;
+}
+nav {
+    background: #f8fbff;
+    padding: 15px;
+}
+nav a {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #4a6fa5;
+}
+.card {
+    background: white;
+    width: 320px;
+    margin: 70px auto;
+    padding: 25px;
+    border-radius: 20px;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #cfdff5;
+}
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #9fc5ff;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="Signup.html">Sign Up</a>
+    <a href="Teamchecker.html">Team Checker</a>
+    <a href="listplayers.html">Players</a>
+</nav>
+
+<div class="card">
+    <h2>Create Account</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <p id="msg"></p>
+</div>
+
+<script>
+function signup() {
+    let u = document.getElementById("username").value;
+    let p = document.getElementById("password").value;
+
+    if (u === "" || p === "") {
+        document.getElementById("msg").innerText = "Please complete all fields.";
+    } else {
+        document.getElementById("msg").innerText = "Account created successfully.";
+    }
+}
+</script>
+
+</body>
+</html>

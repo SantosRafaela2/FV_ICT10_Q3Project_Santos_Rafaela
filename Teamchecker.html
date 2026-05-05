@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Team Checker</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #edf5ff, #e6f0ff);
+    text-align: center;
+    color: #3a4a63;
+    margin: 0;
+}
+nav {
+    background: #f8fbff;
+    padding: 15px;
+}
+nav a {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #4a6fa5;
+}
+.card {
+    background: white;
+    width: 360px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 20px;
+}
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #cfdff5;
+}
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #9fc5ff;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="Signup.html">Sign Up</a>
+    <a href="Teamchecker.html">Team Checker</a>
+    <a href="listplayers.html">Players</a>
+</nav>
+
+<div class="card">
+    <h2>Team Checker</h2>
+
+    <input id="grade" type="number" placeholder="Grade Level">
+
+    <select id="section">
+        <option value="">Select Section</option>
+        <option>Ruby</option>
+        <option>Sapphire</option>
+        <option>Emerald</option>
+        <option>Topaz</option>
+        <option>Jade</option>
+    </select>
+
+    <button onclick="checkTeam()">Check Team</button>
+    <p id="output"></p>
+</div>
+
+<script>
+function checkTeam() {
+    let grade = document.getElementById("grade").value;
+    let section = document.getElementById("section").value.toUpperCase();
+    let team = "";
+
+    if (grade === "" || section === "") {
+        document.getElementById("output").innerText = "Please complete all fields.";
+        return;
+    }
+
+    grade = Number(grade);
+
+    if (grade === 7 && section === "RUBY") team = "Yellow Tigers";
+    else if (grade === 7 && section === "SAPPHIRE") team = "Red Bulldogs";
+    else if (grade === 7 && section === "EMERALD") team = "Blue Bears";
+    else if (grade === 7 && section === "TOPAZ") team = "Green Hornets";
+
+    else if (grade === 8 && section === "EMERALD") team = "Yellow Tigers";
+    else if (grade === 8 && section === "RUBY") team = "Red Bulldogs";
+    else if (grade === 8 && section === "TOPAZ") team = "Blue Bears";
+    else if (grade === 8 && section === "JADE") team = "Blue Bears";
+    else if (grade === 8 && section === "SAPPHIRE") team = "Green Hornets";
+
+    else if (grade === 9 && section === "SAPPHIRE") team = "Yellow Tigers";
+    else if (grade === 9 && section === "TOPAZ") team = "Red Bulldogs";
+    else if (grade === 9 && section === "RUBY") team = "Blue Bears";
+    else if (grade === 9 && section === "JADE") team = "Green Hornets";
+    else if (grade === 9 && section === "EMERALD") team = "Green Hornets";
+
+    else if (grade === 10 && section === "SAPPHIRE") team = "Yellow Tigers";
+    else if (grade === 10 && section === "EMERALD") team = "Red Bulldogs";
+    else if (grade === 10 && section === "TOPAZ") team = "Blue Bears";
+    else if (grade === 10 && section === "RUBY") team = "Green Hornets";
+
+    else team = "No intramurals team assigned.";
+
+    document.getElementById("output").innerText =
+        "You are assigned to: " + team;
+}
+</script>
+
+</body>
+</html>
